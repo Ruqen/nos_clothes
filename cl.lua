@@ -15,7 +15,7 @@ Citizen.CreateThread(function()
             local elements = {}
             local pPed = PlayerPedId()
             local pos = GetEntityCoords(pPed)
-            local dist = GetDistanceBetweenCoords(pos, v.x, v.y, v.z, true)
+            local dist = #(pos - v)
             if dist < 1.5 then
                 sleep = 1
                 DrawText3D(v.x, v.y, v.z, "Press ~g~[E]~s~ to access your clothes.")
