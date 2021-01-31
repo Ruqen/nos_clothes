@@ -2,7 +2,7 @@ ESX = nil
 
 TriggerEvent("esx:getSharedObject", function(obj) ESX = obj end)
 
-ESX.RegisterServerCallback("nos_clothes:getPlayerDressing", function(source, cb)
+ESX.RegisterServerCallback("ruq_clothes:getPlayerDressing", function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	TriggerEvent("esx_datastore:getDataStore", "property", xPlayer.getIdentifier(), function(store)
@@ -18,7 +18,7 @@ ESX.RegisterServerCallback("nos_clothes:getPlayerDressing", function(source, cb)
 	end)
 end)
 
-ESX.RegisterServerCallback("nos_clothes:getPlayerOutfit", function(source, cb, num)
+ESX.RegisterServerCallback("ruq_clothes:getPlayerOutfit", function(source, cb, num)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	TriggerEvent("esx_datastore:getDataStore", "property", xPlayer.getIdentifier(), function(store)
@@ -27,8 +27,8 @@ ESX.RegisterServerCallback("nos_clothes:getPlayerOutfit", function(source, cb, n
 	end)
 end)
 
-RegisterNetEvent("nos_clothes:removeOutfit")
-AddEventHandler("nos_clothes:removeOutfit", function(label)
+RegisterNetEvent("ruq_clothes:removeOutfit")
+AddEventHandler("ruq_clothes:removeOutfit", function(label)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	TriggerEvent("esx_datastore:getDataStore", "property", xPlayer.getIdentifier(), function(store)
