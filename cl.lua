@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
                         elements = elements
                     }, function(data, menu)
                         if data.current.value == "myclothes" then
-                            ESX.TriggerServerCallback("nos_clothes:getPlayerDressing", function(dressing)
+                            ESX.TriggerServerCallback("ruq_clothes:getPlayerDressing", function(dressing)
                                 local elements = {}
 
                                 for i = 1, #dressing, 1 do
@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
                                     elements = elements
                                 }, function(data1, menu1)
                                     TriggerEvent("skinchanger:getSkin", function(skin)
-                                        ESX.TriggerServerCallback("nos_clothes:getPlayerOutfit", function(clothes)
+                                        ESX.TriggerServerCallback("ruq_clothes:getPlayerOutfit", function(clothes)
                                             TriggerEvent("skinchanger:loadClothes", skin, clothes)
                                             TriggerEvent("esx_skin:setLastSkin", skin)
                 
@@ -61,7 +61,7 @@ Citizen.CreateThread(function()
                                 end)
                             end)
                         elseif data.current.value == "removeclothe" then
-                            ESX.TriggerServerCallback("nos_clothes:getPlayerDressing", function(dressing)
+                            ESX.TriggerServerCallback("ruq_clothes:getPlayerDressing", function(dressing)
                                 local elements = {}
 
                                 for i = 1, #dressing, 1 do
@@ -77,7 +77,7 @@ Citizen.CreateThread(function()
                                     elements = elements
                                 }, function(data2, menu2)
                                     menu2.close()
-                                    TriggerServerEvent("nos_clothes:removeOutfit", data2.current.value)
+                                    TriggerServerEvent("ruq_clothes:removeOutfit", data2.current.value)
                                     ESX.ShowNotification("Removed clothe successfully.")
                                 end, function(data2, menu2)
                                     menu2.close()
